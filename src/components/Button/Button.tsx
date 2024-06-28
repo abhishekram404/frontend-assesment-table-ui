@@ -1,7 +1,7 @@
 import { ReactNode } from "react";
 import { ButtonStyled } from "./Button.styled";
 
-export type ButtonVariant = "default" | "primary";
+export type ButtonVariant = "default" | "primary" | 'secondary';
 export type ButtonProps = {
   children?: ReactNode;
   leftIcon?: ReactNode;

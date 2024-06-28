@@ -13,6 +13,7 @@ function App() {
         Show metadata{" "}
       </Button>
       <Button variant="primary">Operations</Button>
+      <Button variant="secondary">Operations</Button>
     </>
   );
 }

@@ -1,15 +1,20 @@
 import styled from "styled-components";
 import { ButtonVariant } from "./Button";
+import {
+  backgroundColorHoverMap,
+  backgroundColorMap,
+  borderColorMap,
+  colorMap,
+} from "./Button.utils";
 
 export const ButtonStyled = styled.button<{ variant?: ButtonVariant }>`
   border-radius: 6px;
-  border: 1px solid #e9eaed;
-  background: ${({ variant }) =>
-    variant === "primary" ? "#1276FF" : "#ffffff"};
   font-size: 14px;
   font-weight: 500;
   line-height: 20px;
-  color: ${({ variant }) => (variant === "primary" ? "#ffffff" : " #1b2d4f")};
+  color: ${({ variant }) => colorMap[variant as ButtonVariant]};
+  background: ${({ variant }) => backgroundColorMap[variant as ButtonVariant]};
+  border: 1px solid ${({ variant }) => borderColorMap[variant as ButtonVariant]};
 
   display: flex;
   padding: 6px 12px;
@@ -21,6 +26,6 @@ export const ButtonStyled = styled.button<{ variant?: ButtonVariant }>`
 
   &:hover {
     background: ${({ variant }) =>
-      variant === "primary" ? "#0f65e7" : "#f5f6f8"};
+      backgroundColorHoverMap[variant as ButtonVariant]};
   }
 `;
