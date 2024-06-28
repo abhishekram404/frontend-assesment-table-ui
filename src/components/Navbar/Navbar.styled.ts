@@ -14,4 +14,8 @@ export const NavbarLeft = styled.div`
   align-items: center;
   gap: 16px;
 `;
-export const NavbarRight = styled.div``;
+export const NavbarRight = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 16px;
+`;

@@ -8,7 +8,7 @@ export const SidebarStyled = styled.aside`
 `;
 
 export const SidebarHeader = styled.div`
-  padding: 20px 24px;
+  padding: 16px 24px;
   border-bottom: 1px solid #e9eaed;
 `;
 
