@@ -1,52 +1,7 @@
-import { ReactNode } from "react";
 import Text from "../Text/Text";
-import {
-  SidebarBody,
-  SidebarHeader,
-  SidebarItemStyled,
-  SidebarStyled,
-} from "./Sidebar.styled";
-import { creditUsageIcon, datasetIcon, workflowsIcon } from "./Sidebar.utils";
-
-const sidebarItems = [
-  {
-    title: "Datasets",
-    icon: datasetIcon,
-    path: "/",
-  },
-  {
-    title: "Workflows",
-    icon: workflowsIcon,
-    path: "/workflows",
-  },
-  {
-    title: "Credit usage",
-    icon: creditUsageIcon,
-    path: "/credit-usage",
-  },
-];
-
-export const SidebarItem = ({
-  icon,
-  title,
-  path,
-}: {
-  icon: ReactNode;
-  title: string;
-  path: string;
-}) => {
-  return (
-    <SidebarItemStyled
-      to={path}
-      className={({ isActive }) => (isActive ? "active" : "")}
-    >
-      {icon}
-      <Text size={14} weight={500} color={"inherit"}>
-        {title}
-      </Text>
-    </SidebarItemStyled>
-  );
-};
+import { SidebarBody, SidebarHeader, SidebarStyled } from "./Sidebar.styled";
+import { sidebarItems } from "./Sidebar.utils";
+import { SidebarItem } from "./SidebarItem";
 
 export default function Sidebar() {
   return (
@@ -58,7 +13,7 @@ export default function Sidebar() {
       </SidebarHeader>
       <SidebarBody>
         {sidebarItems.map((item) => (
-          <SidebarItem {...item} />
+          <SidebarItem key={item.title} {...item} />
         ))}
       </SidebarBody>
     </SidebarStyled>

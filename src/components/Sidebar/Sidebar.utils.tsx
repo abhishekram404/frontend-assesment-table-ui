@@ -69,3 +69,21 @@ export const creditUsageIcon = (
     />
   </svg>
 );
+
+export const sidebarItems = [
+  {
+    title: "Datasets",
+    icon: datasetIcon,
+    path: "/",
+  },
+  {
+    title: "Workflows",
+    icon: workflowsIcon,
+    path: "/workflows",
+  },
+  {
+    title: "Credit usage",
+    icon: creditUsageIcon,
+    path: "/credit-usage",
+  },
+];
