@@ -12,31 +12,36 @@ const sidebarItems = [
   {
     title: "Datasets",
     icon: datasetIcon,
-    isActive: true,
+    path: "/",
   },
   {
     title: "Workflows",
     icon: workflowsIcon,
+    path: "/workflows",
   },
   {
     title: "Credit usage",
     icon: creditUsageIcon,
+    path: "/credit-usage",
   },
 ];
 
 export const SidebarItem = ({
   icon,
   title,
-  isActive,
+  path,
 }: {
   icon: ReactNode;
   title: string;
-  isActive?: boolean;
+  path: string;
 }) => {
   return (
-    <SidebarItemStyled isActive={isActive}>
+    <SidebarItemStyled
+      to={path}
+      className={({ isActive }) => (isActive ? "active" : "")}
+    >
       {icon}
-      <Text size={14} weight={500} color={isActive ? "#1276FF" : "#1B2D4F"}>
+      <Text size={14} weight={500} color={"inherit"}>
         {title}
       </Text>
     </SidebarItemStyled>

@@ -1,19 +1,16 @@
-import { ReactNode } from "react";
-import { LayoutStyled } from "./Layout.styled";
+import { Outlet } from "react-router-dom";
+import Navbar from "../../components/Navbar/Navbar";
+import Sidebar from "../../components/Sidebar/Sidebar";
+import { LayoutBody, LayoutStyled } from "./Layout.styled";
 
-type LayoutProps = {
-  header: ReactNode;
-  sidebar: ReactNode;
-  children: ReactNode;
-};
-
-export default function Layout(props: LayoutProps) {
-  const { header, sidebar, children } = props;
+export default function Layout() {
   return (
     <LayoutStyled>
-      {header}
-      {sidebar}
-      {children}
+      <Navbar />
+      <Sidebar />
+      <LayoutBody>
+        <Outlet />
+      </LayoutBody>
     </LayoutStyled>
   );
 }

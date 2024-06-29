@@ -1,4 +1,5 @@
-import styled, { css } from "styled-components";
+import { NavLink } from "react-router-dom";
+import styled from "styled-components";
 
 export const SidebarStyled = styled.aside`
   grid-area: sidebar;
@@ -19,7 +20,7 @@ export const SidebarBody = styled.div`
   gap: 8px;
 `;
 
-export const SidebarItemStyled = styled.div<{ isActive?: boolean }>`
+export const SidebarItemStyled = styled(NavLink)`
   display: flex;
   align-items: center;
   gap: 4px;
@@ -27,15 +28,20 @@ export const SidebarItemStyled = styled.div<{ isActive?: boolean }>`
   cursor: pointer;
   border-radius: 6px;
   transition: background-color 0.2s;
+  background: transparent;
+  text-decoration: none;
+  color: #1B2D4F;
 
-  color: ${(props) => (props.isActive ? "#1276FF" : "#1B2D4F")};
-  background: ${(props) => (props.isActive ? "#D6E7FF" : "transparent")};
+  &:hover {
+    background-color: #f5f6f8;
+  }
 
-  ${({ isActive }) =>
-    !isActive &&
-    css`
-      &:hover {
-        background-color: #f5f6f8;
-      }
-    `}
+  &.active {
+    color: #1276FF;
+    background: #d6e7ff;
+
+    &:hover {
+      background: #d6e7ff;
+    }
+  }
 `;
