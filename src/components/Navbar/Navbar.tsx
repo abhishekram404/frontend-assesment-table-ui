@@ -1,3 +1,4 @@
+import Avatar from "../Avatar/Avatar";
 import IconButton from "../IconButton/IconButton";
 import Pill from "../Pill/Pill";
 import Text from "../Text/Text";
@@ -24,6 +25,7 @@ export default function Navbar() {
           Credit usage: 1018 / 2000
         </Pill>
         <IconButton>{bellIcon}</IconButton>
+        <Avatar src="https://i.pravatar.cc/300" size="32px" alt="avatar" />
       </NavbarRight>
     </NavbarStyled>
   );
