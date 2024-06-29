@@ -1,6 +1,6 @@
 import { RouteObject } from "react-router-dom";
+import Datasets from "../pages/Datasets/Datasets";
 import Layout from "./Layout/Layout";
-import Datasets from "../pages/Datasets";
 
 export const routes: RouteObject[] = [
   {
