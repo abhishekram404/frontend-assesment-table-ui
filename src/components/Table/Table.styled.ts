@@ -7,6 +7,7 @@ export const TableStyled = styled.table`
   border-radius: 6px;
   position: relative;
   height: 100%;
+  border-radius: 6px;
 `;
 
 export const TableHeadStyled = styled.thead`
