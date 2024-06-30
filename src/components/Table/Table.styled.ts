@@ -40,7 +40,7 @@ export const TableBodyStyled = styled.tbody``;
 
 export const TableRowStyled = styled.tr`
   display: flex;
-  padding: 14px 32px;
+  padding: 16px 32px;
   margin-right: 8px;
   gap: 48px;
 

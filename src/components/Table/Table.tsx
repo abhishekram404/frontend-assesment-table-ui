@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import { Icon } from "@iconify/react";
 import {
   TableBodyStyled,
   TableCellStyled,
@@ -9,74 +9,61 @@ import {
   TableRowStyled,
   TableStyled,
 } from "./Table.styled";
-import { Icon } from "@iconify/react";
+import Text from "../Text/Text";
 
-const items = Array(100).fill(
-  <TableRowStyled>
-    <TableCellStyled>Product 1</TableCellStyled>
-    <TableCellStyled>100</TableCellStyled>
-    <TableCellStyled>4.5</TableCellStyled>
-    <TableCellStyled>Brand 1</TableCellStyled>
-    <TableCellStyled>Available</TableCellStyled>
-  </TableRowStyled>
-);
+export type TableItem = any;
 
-export default function Table() {
+export type TableColumn = {
+  name: string;
+  accessor: string;
+  prefix?: string;
+  suffix?: string;
+};
+
+export type TableProps = {
+  columns: TableColumn[];
+  items: TableItem[];
+};
+
+export default function Table(props: TableProps) {
+  const { columns, items } = props;
   return (
     <TableStyled>
       <TableHeadStyled>
         <TableRowStyled>
-          <TableHeadItemStyled>
-            <TableHeadItemLeft>
-              <Icon icon="ph:text-a-underline" color="#606B81" fontSize={20} />
-              Product name
-            </TableHeadItemLeft>
-            <TableHeadItemRight>
-              <Icon icon="bi:filter" color="#606B81" fontSize={20} />
-            </TableHeadItemRight>
-          </TableHeadItemStyled>
-          <TableHeadItemStyled>
-            <TableHeadItemLeft>
-              <Icon icon="ph:text-a-underline" color="#606B81" fontSize={20} />
-              Price
-            </TableHeadItemLeft>
-            <TableHeadItemRight>
-              <Icon icon="bi:filter" color="#606B81" fontSize={20} />
-            </TableHeadItemRight>
-          </TableHeadItemStyled>
-          <TableHeadItemStyled>
-            <TableHeadItemLeft>
-              <Icon icon="ph:text-a-underline" color="#606B81" fontSize={20} />
-              Rating
-            </TableHeadItemLeft>
-            <TableHeadItemRight>
-              <Icon icon="bi:filter" color="#606B81" fontSize={20} />
-            </TableHeadItemRight>
-          </TableHeadItemStyled>
-          <TableHeadItemStyled>
-            <TableHeadItemLeft>
-              <Icon icon="ph:text-a-underline" color="#606B81" fontSize={20} />
-              Brand
-            </TableHeadItemLeft>
-            <TableHeadItemRight>
-              <Icon icon="bi:filter" color="#606B81" fontSize={20} />
-            </TableHeadItemRight>
-          </TableHeadItemStyled>
-          <TableHeadItemStyled>
-            <TableHeadItemLeft>
-              <Icon icon="ph:text-a-underline" color="#606B81" fontSize={20} />
-              Availability
-            </TableHeadItemLeft>
-            <TableHeadItemRight>
-              <Icon icon="bi:filter" color="#606B81" fontSize={20} />
-            </TableHeadItemRight>
-          </TableHeadItemStyled>
+          {columns.map((column) => (
+            <TableHeadItemStyled key={column.accessor}>
+              <TableHeadItemLeft>
+                <Icon
+                  icon="ph:text-a-underline"
+                  color="#606B81"
+                  fontSize={20}
+                />
+                <Text size={14} weight={700} color="#1B2D4F">
+                  {column.name}
+                </Text>
+              </TableHeadItemLeft>
+              <TableHeadItemRight>
+                <Icon icon="bi:filter" color="#606B81" fontSize={20} />
+              </TableHeadItemRight>
+            </TableHeadItemStyled>
+          ))}
         </TableRowStyled>
       </TableHeadStyled>
 
       <TableBodyStyled>
-        {items.map((item, index) => (
-          <Fragment key={index}>{item}</Fragment>
+        {items.map((item) => (
+          <TableRowStyled>
+            {columns.map((column) => (
+              <TableCellStyled>
+                <Text size={14} weight={500} color="#1B2D4F">
+                  {column.prefix}
+                  {item[column.accessor]}
+                  {column.suffix}
+                </Text>
+              </TableCellStyled>
+            ))}
+          </TableRowStyled>
         ))}
       </TableBodyStyled>
     </TableStyled>
