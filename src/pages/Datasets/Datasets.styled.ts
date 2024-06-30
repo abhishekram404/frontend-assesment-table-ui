@@ -7,7 +7,6 @@ export const Root = styled.div`
   padding: 24px;
   background-color: #f4f5fc;
   height: calc(100dvh - 60px);
-  overflow-y: auto;
 `;
 
 export const TopbarStyled = styled.div`

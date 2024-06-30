@@ -5,6 +5,8 @@ export const TableStyled = styled.table`
   display: flex;
   flex-direction: column;
   border-radius: 6px;
+  position: relative;
+  height: 100%;
 `;
 
 export const TableHeadStyled = styled.thead`
@@ -12,6 +14,8 @@ export const TableHeadStyled = styled.thead`
   border-radius: 6px;
   display: flex;
   flex-direction: column;
+  position: sticky;
+  top: 0;
 
   > tr {
     background: transparent !important;
@@ -36,7 +40,10 @@ export const TableHeadItemRight = styled.span`
   gap: 8px;
 `;
 
-export const TableBodyStyled = styled.tbody``;
+export const TableBodyStyled = styled.tbody`
+  height: calc(100% - 90px);
+  overflow-y: auto;
+`;
 
 export const TableRowStyled = styled.tr`
   display: flex;
