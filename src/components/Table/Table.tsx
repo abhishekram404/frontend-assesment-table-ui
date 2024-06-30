@@ -18,6 +18,7 @@ export type TableColumn = {
   accessor: string;
   prefix?: string;
   suffix?: string;
+  formatter?: <T>(value: T) => any;
 };
 
 export type TableProps = {
@@ -53,16 +54,21 @@ export default function Table(props: TableProps) {
 
       <TableBodyStyled>
         {items.map((item) => (
-          <TableRowStyled>
-            {columns.map((column) => (
-              <TableCellStyled>
-                <Text size={14} weight={500} color="#1B2D4F">
-                  {column.prefix}
-                  {item[column.accessor]}
-                  {column.suffix}
-                </Text>
-              </TableCellStyled>
-            ))}
+          <TableRowStyled key={item.id}>
+            {columns.map(({ accessor, prefix, suffix, formatter }) => {
+              const formattedValue = formatter
+                ? formatter(item[accessor])
+                : item[accessor];
+              return (
+                <TableCellStyled key={item.id + accessor}>
+                  <Text size={14} weight={500} color="#1B2D4F">
+                    {prefix}
+                    {formattedValue}
+                    {suffix}
+                  </Text>
+                </TableCellStyled>
+              );
+            })}
           </TableRowStyled>
         ))}
       </TableBodyStyled>
