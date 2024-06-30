@@ -53,4 +53,15 @@ export const TableRowStyled = styled.tr`
   }
 `;
 
-export const TableCellStyled = styled.td``;
+export const TableCellStyled = styled.td`
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  > * {
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+`;
