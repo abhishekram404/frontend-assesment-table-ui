@@ -2,11 +2,14 @@ import React, { Fragment } from "react";
 import {
   TableBodyStyled,
   TableCellStyled,
+  TableHeadItemLeft,
+  TableHeadItemRight,
   TableHeadItemStyled,
   TableHeadStyled,
   TableRowStyled,
   TableStyled,
 } from "./Table.styled";
+import { Icon } from "@iconify/react";
 
 const items = Array(100).fill(
   <TableRowStyled>
@@ -23,11 +26,51 @@ export default function Table() {
     <TableStyled>
       <TableHeadStyled>
         <TableRowStyled>
-          <TableHeadItemStyled>Product name</TableHeadItemStyled>
-          <TableHeadItemStyled>Price</TableHeadItemStyled>
-          <TableHeadItemStyled>Rating</TableHeadItemStyled>
-          <TableHeadItemStyled>Brand</TableHeadItemStyled>
-          <TableHeadItemStyled>Availability</TableHeadItemStyled>
+          <TableHeadItemStyled>
+            <TableHeadItemLeft>
+              <Icon icon="ph:text-a-underline" color="#606B81" fontSize={20} />
+              Product name
+            </TableHeadItemLeft>
+            <TableHeadItemRight>
+              <Icon icon="bi:filter" color="#606B81" fontSize={20} />
+            </TableHeadItemRight>
+          </TableHeadItemStyled>
+          <TableHeadItemStyled>
+            <TableHeadItemLeft>
+              <Icon icon="ph:text-a-underline" color="#606B81" fontSize={20} />
+              Price
+            </TableHeadItemLeft>
+            <TableHeadItemRight>
+              <Icon icon="bi:filter" color="#606B81" fontSize={20} />
+            </TableHeadItemRight>
+          </TableHeadItemStyled>
+          <TableHeadItemStyled>
+            <TableHeadItemLeft>
+              <Icon icon="ph:text-a-underline" color="#606B81" fontSize={20} />
+              Rating
+            </TableHeadItemLeft>
+            <TableHeadItemRight>
+              <Icon icon="bi:filter" color="#606B81" fontSize={20} />
+            </TableHeadItemRight>
+          </TableHeadItemStyled>
+          <TableHeadItemStyled>
+            <TableHeadItemLeft>
+              <Icon icon="ph:text-a-underline" color="#606B81" fontSize={20} />
+              Brand
+            </TableHeadItemLeft>
+            <TableHeadItemRight>
+              <Icon icon="bi:filter" color="#606B81" fontSize={20} />
+            </TableHeadItemRight>
+          </TableHeadItemStyled>
+          <TableHeadItemStyled>
+            <TableHeadItemLeft>
+              <Icon icon="ph:text-a-underline" color="#606B81" fontSize={20} />
+              Availability
+            </TableHeadItemLeft>
+            <TableHeadItemRight>
+              <Icon icon="bi:filter" color="#606B81" fontSize={20} />
+            </TableHeadItemRight>
+          </TableHeadItemStyled>
         </TableRowStyled>
       </TableHeadStyled>
 

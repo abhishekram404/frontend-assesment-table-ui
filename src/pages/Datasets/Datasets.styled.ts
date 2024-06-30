@@ -3,9 +3,11 @@ import styled from "styled-components";
 export const Root = styled.div`
   display: flex;
   flex-direction: column;
+  gap: 16px;
   padding: 24px;
   background-color: #f4f5fc;
-  height: 100%;
+  height: calc(100dvh - 60px);
+  overflow-y: auto;
 `;
 
 export const TopbarStyled = styled.div`
