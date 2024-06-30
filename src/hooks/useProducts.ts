@@ -5,6 +5,7 @@ export default function useProducts() {
   const response = useQuery({
     queryKey: ["products"],
     queryFn: fetchProducts,
+    staleTime: 1000 * 60 * 60,
   });
 
   return {
