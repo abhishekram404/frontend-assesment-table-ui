@@ -1,6 +1,8 @@
+import { lazy, Suspense } from "react";
 import { RouteObject } from "react-router-dom";
-import Datasets from "../pages/Datasets/Datasets";
+import LoadingScreen from "../components/LoadingScreen/LoadingScreen";
 import Layout from "./Layout/Layout";
+const Datasets = lazy(() => import("../pages/Datasets/Datasets"));
 
 export const routes: RouteObject[] = [
   {
@@ -8,7 +10,11 @@ export const routes: RouteObject[] = [
     children: [
       {
         index: true,
-        element: <Datasets />,
+        element: (
+          <Suspense fallback={<LoadingScreen />}>
+            <Datasets />
+          </Suspense>
+        ),
       },
       {
         path: "workflows",
