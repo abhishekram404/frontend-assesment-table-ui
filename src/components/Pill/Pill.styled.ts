@@ -2,6 +2,7 @@ import styled from "styled-components";
 import { PillProps } from "./Pill";
 
 export const PillWrapper = styled.span<PillProps>`
+  width: fit-content;
   display: flex;
   align-items: center;
   padding: 4px 10px;
