@@ -8,7 +8,7 @@ export default function useProducts() {
   });
 
   return {
-    products: response.data,
+    products: response.data || [],
     ...response,
   };
 }
