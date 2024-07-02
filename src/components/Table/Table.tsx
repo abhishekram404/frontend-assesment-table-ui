@@ -1,6 +1,6 @@
 import { Icon } from "@iconify/react";
 import Text from "../Text/Text";
-import { Row } from "./components/Row";
+import Row from "./components/Row";
 import {
   TableBodyStyled,
   TableHeadItemLeft,

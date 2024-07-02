@@ -1,14 +1,15 @@
+import { memo } from "react";
 import { AnyObject } from "../../../shared/types/AnyObject.type";
 import { TableColumn } from "../Table";
 import { TableRowStyled } from "../Table.styled";
-import { Column } from "./Column";
+import Column from "./Column";
 
 export type RowProps = {
   item: AnyObject;
   columns: TableColumn[];
 };
 
-export function Row(props: RowProps) {
+export default memo(function Row(props: RowProps) {
   const { item, columns } = props;
 
   return (
@@ -18,4 +19,4 @@ export function Row(props: RowProps) {
       ))}
     </TableRowStyled>
   );
-}
+});
