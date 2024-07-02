@@ -7,14 +7,16 @@ import {
   colorMap,
 } from "./Button.utils";
 
-export const ButtonStyled = styled.button<{ variant?: ButtonVariant }>`
+export const ButtonStyled = styled.button<{ $variant?: ButtonVariant }>`
   border-radius: 6px;
   font-size: 14px;
   font-weight: 500;
   line-height: 20px;
-  color: ${({ variant }) => colorMap[variant as ButtonVariant]};
-  background: ${({ variant }) => backgroundColorMap[variant as ButtonVariant]};
-  border: 1px solid ${({ variant }) => borderColorMap[variant as ButtonVariant]};
+  color: ${({ $variant }) => colorMap[$variant as ButtonVariant]};
+  background: ${({ $variant }) =>
+    backgroundColorMap[$variant as ButtonVariant]};
+  border: 1px solid
+    ${({ $variant }) => borderColorMap[$variant as ButtonVariant]};
 
   display: flex;
   padding: 6px 12px;
@@ -25,7 +27,7 @@ export const ButtonStyled = styled.button<{ variant?: ButtonVariant }>`
   cursor: pointer;
 
   &:hover {
-    background: ${({ variant }) =>
-      backgroundColorHoverMap[variant as ButtonVariant]};
+    background: ${({ $variant }) =>
+      backgroundColorHoverMap[$variant as ButtonVariant]};
   }
 `;

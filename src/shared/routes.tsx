@@ -1,7 +1,7 @@
 import { lazy, Suspense } from "react";
 import { RouteObject } from "react-router-dom";
+import Layout from "../components/Layout/Layout";
 import LoadingScreen from "../components/LoadingScreen/LoadingScreen";
-import Layout from "./Layout/Layout";
 const Datasets = lazy(() => import("../pages/Datasets/Datasets"));
 
 export const routes: RouteObject[] = [

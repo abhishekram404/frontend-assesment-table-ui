@@ -12,12 +12,26 @@ export type TextProps = {
 };
 
 export default function Text(props: TextProps) {
-  const { children, isHeading, headingLevel = 1, ...styledProps } = props;
+  const {
+    children,
+    isHeading,
+    headingLevel = 1,
+    align,
+    color,
+    size,
+    weight,
+  } = props;
 
   const underlyingElement = isHeading ? `h${headingLevel}` : "p";
 
   return (
-    <TextStyled as={underlyingElement} {...styledProps}>
+    <TextStyled
+      as={underlyingElement}
+      $align={align}
+      $color={color}
+      $size={size}
+      $weight={weight}
+    >
       {children}
     </TextStyled>
   );

@@ -6,5 +6,5 @@ export type LoaderProps = {
 
 export default function Loader(props: LoaderProps) {
   const { size = 25 } = props;
-  return <LoaderStyled size={size} />;
+  return <LoaderStyled $size={size} />;
 }

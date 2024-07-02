@@ -1,7 +1,7 @@
 import { ReactNode } from "react";
 import { ButtonStyled } from "./Button.styled";
 
-export type ButtonVariant = "default" | "primary" | 'secondary';
+export type ButtonVariant = "default" | "primary" | "secondary";
 export type ButtonProps = {
   children?: ReactNode;
   leftIcon?: ReactNode;
@@ -12,7 +12,7 @@ export type ButtonProps = {
 export default function Button(props: ButtonProps) {
   const { children, leftIcon, rightIcon, variant = "default" } = props;
   return (
-    <ButtonStyled variant={variant}>
+    <ButtonStyled $variant={variant}>
       {leftIcon}
       {children}
       {rightIcon}

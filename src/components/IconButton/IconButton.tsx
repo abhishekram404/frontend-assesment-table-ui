@@ -11,5 +11,24 @@ export type IconButtonProps = {
 };
 
 export default function IconButton(props: IconButtonProps) {
-  return <IconButtonStyled {...props}>{props.children}</IconButtonStyled>;
+  const {
+    backgroundColor,
+    borderColor,
+    borderRadius,
+    children,
+    hoverBackgroundColor,
+    padding,
+  } = props;
+
+  return (
+    <IconButtonStyled
+      $backgroundColor={backgroundColor}
+      $borderColor={borderColor}
+      $borderRadius={borderRadius}
+      $hoverBackgroundColor={hoverBackgroundColor}
+      $padding={padding}
+    >
+      {children}
+    </IconButtonStyled>
+  );
 }

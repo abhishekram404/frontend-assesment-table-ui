@@ -1,8 +1,7 @@
 import styled from "styled-components";
-import { LoaderProps } from "./Loader";
 
-export const LoaderStyled = styled.div<LoaderProps>`
-  width: ${({ size }) => size}px;
+export const LoaderStyled = styled.div<{ $size: number }>`
+  width: ${({ $size }) => $size}px;
   aspect-ratio: 1;
   display: grid;
   border-radius: 50%;

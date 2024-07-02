@@ -20,9 +20,9 @@ export default function Pill(props: PillProps) {
 
   return (
     <PillWrapper
-      backgroundColor={backgroundColor}
-      color={color}
-      hoverColor={hoverColor}
+      $backgroundColor={backgroundColor}
+      $color={color}
+      $hoverColor={hoverColor}
       onClick={onClick}
     >
       {children}
