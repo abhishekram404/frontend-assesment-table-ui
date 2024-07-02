@@ -15,7 +15,7 @@ export default memo(function Column(props: ColumnProps) {
   const title = `${prefix}${originalValue}${suffix}`;
 
   return (
-    <TableCellStyled key={item.id + accessor} title={title}>
+    <TableCellStyled title={title}>
       <Text size={14} weight={500} color="#1B2D4F">
         {prefix}
         {formattedValue}
