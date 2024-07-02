@@ -1,5 +1,5 @@
-import { createElement, ReactNode } from "react";
-import { getStyledElement } from "./Text.styled";
+import { ReactNode } from "react";
+import { TextStyled } from "./Text.styled";
 
 export type TextProps = {
   children?: ReactNode | string;
@@ -14,9 +14,11 @@ export type TextProps = {
 export default function Text(props: TextProps) {
   const { children, isHeading, headingLevel = 1, ...styledProps } = props;
 
-  return createElement(
-    getStyledElement({ isHeading, headingLevel }),
-    styledProps,
-    children
+  const underlyingElement = isHeading ? `h${headingLevel}` : "p";
+
+  return (
+    <TextStyled as={underlyingElement} {...styledProps}>
+      {children}
+    </TextStyled>
   );
 }
