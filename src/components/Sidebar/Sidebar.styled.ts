@@ -18,6 +18,7 @@ export const SidebarBody = styled.div`
   display: flex;
   flex-direction: column;
   gap: 8px;
+  flex: 1;
 `;
 
 export const SidebarItemStyled = styled(NavLink)`
@@ -30,18 +31,30 @@ export const SidebarItemStyled = styled(NavLink)`
   transition: background-color 0.2s;
   background: transparent;
   text-decoration: none;
-  color: #1B2D4F;
+  color: #1b2d4f;
 
   &:hover {
     background-color: #f5f6f8;
   }
 
   &.active {
-    color: #1276FF;
+    color: #1276ff;
     background: #d6e7ff;
 
     &:hover {
       background: #d6e7ff;
     }
   }
+`;
+
+export const SidebarFooter = styled.div`
+  border-radius: 6px;
+  opacity: 0.8;
+  background: #f4f5fc;
+  padding: 16px;
+  margin-top: auto;
+
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
 `;
