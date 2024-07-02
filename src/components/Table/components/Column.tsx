@@ -1,5 +1,5 @@
 import { memo } from "react";
-import { AnyObject } from "../../../shared/types/AnyObject.type";
+import { AnyObject } from "../../../types/AnyObject.type";
 import Text from "../../Text/Text";
 import { TableColumn } from "../Table";
 import { TableCellStyled } from "../Table.styled";

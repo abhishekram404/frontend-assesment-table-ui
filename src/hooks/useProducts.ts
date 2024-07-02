@@ -1,7 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import { fetchProducts } from "../pages/Datasets/Datasets.utils";
-import { Product } from "../shared/types/Product.type";
-import { addFakeRatingToProduct } from "../shared/utils/addFakeRatingToProduct";
+import { Product } from "../types/Product.type";
+import { addFakeRatingToProduct } from "../utils/addFakeRatingToProduct";
 
 const addRating = (data: Product[]) => data.map(addFakeRatingToProduct);
 
