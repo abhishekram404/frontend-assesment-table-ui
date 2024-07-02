@@ -17,7 +17,10 @@ export const columns: TableColumn[] = [
     formatter: (value) => parseInt(value as string),
   },
   { name: "Rating", accessor: "rating" },
-  { name: "Brand", accessor: "brand" },
+  {
+    name: "Brand",
+    accessor: "brand",
+  },
   {
     name: "Availability",
     accessor: "isAvailable",
