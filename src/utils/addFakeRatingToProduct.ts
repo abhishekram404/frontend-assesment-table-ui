@@ -1,4 +1,4 @@
-import { Product } from "../../types/Product.type";
+import { Product } from "../types/Product.type";
 import { generateRating } from "./generateRating";
 
 export const addFakeRatingToProduct = (product: Product) => ({
